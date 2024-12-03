@@ -1,0 +1,167 @@
+$primary-color: #6a82fb;
+$secondary-color: #fc5c7d;
+$accent-color: #ffd700;
+$background-color: #ffffff;
+$card-bg: #f2f2f2;
+$hover-color: #f07f6b;
+
+.eventsContainer {
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 32px;
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .calendarContainer {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    .react-calendar {
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: $background-color;
+    }
+  }
+
+  .selectedDate {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0;
+    color: #555;
+  }
+
+  .addEventButton {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  .eventForm {
+    background-color: $card-bg;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    input,
+    textarea {
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+
+    .submitEventButton {
+      background-color: $secondary-color;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+
+    .cancelButton {
+      background-color: #ccc;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+
+      &:hover {
+        background-color: darken(#ccc, 10%);
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: $primary-color;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    td {
+      background-color: #fff;
+      color: #333;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+  }
+
+  .editButton, .deleteButton {
+    background-color: $accent-color;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+  }
+
+  .goBackButton {
+    background-color: #ddd;
+    color: #333;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken(#ddd, 10%);
+    }
+  }
+}

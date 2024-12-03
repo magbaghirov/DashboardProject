@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+$primary-color: #FF6F61;
+$secondary-color: #5B8C5A;
+$bg-color: #F5F7FA;
+$table-bg: #FFFFFF;
+$table-border: #e1e1e1;
+$text-color: #333333;
+$button-hover-color: #FF4D3B;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: $bg-color;
+  color: $text-color;
+}
+
+.membersContainer {
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: $primary-color;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  input, select {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 45%;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+}
+
+.addButton {
+  padding: 12px 20px;
+  background-color: $primary-color;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}
+
+.formContainer {
+  margin-top: 30px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-size: 1.8rem;
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  input, select {
+    padding: 12px;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+
+  button {
+    padding: 12px 20px;
+    background-color: $primary-color;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+  }
+
+  button[type="button"] {
+    background-color: #ccc;
+    margin-top: 10px;
+
+    &:hover {
+      background-color: #bbb;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  font-size: 1rem;
+
+  thead {
+    background-color: $primary-color;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid $table-border;
+  }
+
+  tbody tr:hover {
+    background-color: #f4f4f4;
+    cursor: pointer;
+  }
+}
+
+.updateButton, .deleteButton {
+  padding: 8px 15px;
+  color: #fff;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.updateButton {
+  background-color: $secondary-color;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+}
+
+.deleteButton {
+  background-color: #e74c3c;
+
+  &:hover {
+    background-color: darken(#e74c3c, 10%);
+  }
+}
+
+.backButton {
+  padding: 12px 20px;
+  background-color: $primary-color;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}

@@ -1,0 +1,134 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f0f8ff;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #2f3b56;
+  color: white;
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.username {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.hamburgerIcon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 20px;
+  z-index: 1000;
+}
+
+.line {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin: 5px 0;
+  border-radius: 2px;
+}
+
+.menuBar {
+  position: absolute;
+  top: 60px;
+  left: 210px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menuBar.menuVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menuButton {
+  padding: 12px 20px;
+  background-color: #36a2eb;
+  color: white;
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.menuButton:hover {
+  background-color: #2980b9;
+}
+
+.logoutButton {
+  background-color: #ff6384;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logoutButton:hover {
+  background-color: #c74b61;
+}
+
+.chartContainer {
+  margin-top: 30px;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 40px 50px; 
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  width: 85%; 
+  max-width: 1000px;
+  min-height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.chartContainer:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.chartTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pieChart {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
