@@ -18,9 +18,10 @@ function Members() {
   });
   const [editingMember, setEditingMember] = useState(null);
   const navigate = useNavigate();
+  const apiUrl = 'https://ecdd529e-8562-4a5a-8109-9888b7608041-00-39ri5c9f8b8c.spock.replit.dev'
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/members')
+    axios.get(`${apiUrl}/api/members`)
       .then((response) => {
         setData(response.data);
         localStorage.setItem('members', JSON.stringify(response.data));
@@ -45,7 +46,7 @@ function Members() {
   };
 
   const addMember = () => {
-    axios.post('http://localhost:5000/api/members', newMember)
+    axios.post(`${apiUrl}/api/members`, newMember)
       .then((response) => {
         setData([...data, response.data]);
         localStorage.setItem('members', JSON.stringify([...data, response.data]));
@@ -57,7 +58,7 @@ function Members() {
   };
 
   const updateMember = () => {
-    axios.put(`http://localhost:5000/api/members/${editingMember.id}`, newMember)
+    axios.put(`${apiUrl}/api/members/${editingMember.id}`, newMember)
       .then((response) => {
         setData(data.map(member => member.id === editingMember.id ? response.data : member));
         localStorage.setItem('members', JSON.stringify(data));
@@ -78,7 +79,7 @@ function Members() {
   };
 
   const deleteMember = (id) => {
-    axios.delete(`http://localhost:5000/api/members/${id}`)
+    axios.delete(`${apiUrl}/api/members/${id}`)
       .then(() => {
         setData(data.filter(member => member.id !== id));
         localStorage.setItem('members', JSON.stringify(data));

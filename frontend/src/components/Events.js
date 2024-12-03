@@ -17,9 +17,10 @@ function Events() {
   });
   const [editingEvent, setEditingEvent] = useState(null); 
   const navigate = useNavigate();
+  const apiUrl = 'https://ecdd529e-8562-4a5a-8109-9888b7608041-00-39ri5c9f8b8c.spock.replit.dev'
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/events')
+    axios.get(`${apiUrl}/api/events`)
       .then(response => setEvents(response.data))
       .catch(error => console.error('Məlumatları çəkməkdə xəta:', error));
   }, []);
@@ -27,7 +28,7 @@ function Events() {
   const handleDateChange = (newDate) => {
     setDate(newDate);
     const selectedDate = new Date(newDate.setHours(0, 0, 0, 0));
-    axios.get('http://localhost:5000/api/events')
+    axios.get(`${apiUrl}/api/events`)
       .then(response => {
         const filteredEvents = response.data.filter(event => {
           const eventDate = new Date(event.date);
@@ -59,7 +60,7 @@ function Events() {
   };
 
   const handleAddEvent = () => {
-    axios.post('http://localhost:5000/api/events', newEvent)
+    axios.post(`${apiUrl}/api/events`, newEvent)
       .then(response => {
         setEvents([...events, response.data]);
         setShowEventForm(false);
@@ -80,7 +81,7 @@ function Events() {
   };
 
   const handleUpdateEvent = () => {
-    axios.put(`http://localhost:5000/api/events/${editingEvent.id}`, newEvent)
+    axios.put(`${apiUrl}/api/events/${editingEvent.id}`, newEvent)
       .then(response => {
         setEvents(events.map(event => event.id === editingEvent.id ? response.data : event));
         setShowEventForm(false);
@@ -96,7 +97,7 @@ function Events() {
   };
 
   const handleDeleteEvent = (id) => {
-    axios.delete(`http://localhost:5000/api/events/${id}`)
+    axios.delete(`${apiUrl}/api/events/${id}`)
       .then(() => {
         setEvents(events.filter(event => event.id !== id));
       })
