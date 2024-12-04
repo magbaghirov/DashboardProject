@@ -115,22 +115,6 @@ function Events() {
     return `${hours}:${minutes}`;
   };
 
-  const convertTo12HourFormat = (time) => {
-    let [hours, minutes] = time.split(':');
-    let period = 'AM';
-    
-    if (parseInt(hours) >= 12) {
-      period = 'PM';
-      if (parseInt(hours) > 12) {
-        hours = (parseInt(hours) - 12).toString();
-      }
-    } else if (hours === '00') {
-      hours = '12';
-    }
-
-    return `${hours}:${minutes} ${period}`;
-  };
-
   const calculateTimeLeft = (eventDate, eventTime) => {
     const formattedTime = convertTo24HourFormat(eventTime);
     const formattedDateTime = `${eventDate}T${formattedTime}`;
