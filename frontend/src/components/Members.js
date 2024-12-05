@@ -18,7 +18,7 @@ function Members() {
   });
   const [editingMember, setEditingMember] = useState(null);
   const navigate = useNavigate();
-  const apiUrl = 'https://ecdd529e-8562-4a5a-8109-9888b7608041-00-39ri5c9f8b8c.spock.replit.dev'
+  const apiUrl = 'http://localhost:5000'
 
   useEffect(() => {
     axios.get(`${apiUrl}/api/members`)
